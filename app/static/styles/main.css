@@ -116,6 +116,7 @@ body {
 .work-item {
   display: flex;
   flex-direction: column;
+  margin-top: 2rem;
 }
 
 .work-details {
@@ -127,7 +128,7 @@ body {
 .company-name {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .role {
@@ -143,6 +144,7 @@ body {
   flex-direction: column;
 }
 
+#education h2,
 #hobbies h2,
 #about-myself h2,
 #work-experience h2 {
@@ -173,7 +175,7 @@ body {
 .container {
   display: grid;
   gap: 2rem;
-  padding: 0 10vw;
+  padding: 2rem 10vw;
 }
 
 .text-center {
@@ -242,4 +244,20 @@ body {
 
 .card-text {
   color: #2d2d2d; /* Tailwind's text-muted-foreground equivalent */
+}
+
+.education-logo {
+  width: 30px; /* Adjust size as needed */
+  height: 30px; /* Adjust size as needed */
+  border-radius: 50%; /* Makes the image rounded */
+  margin-right: 10px; /* Adds some space between the image and the text */
+  vertical-align: middle; /* Aligns the image with the text */
+}
+
+.another-company-container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  align-items: center;
+  margin: 0;
 }
