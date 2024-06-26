@@ -107,3 +107,59 @@ body {
   max-width: 50vw;
   margin: 0 auto;
 }
+
+.work-content {
+  margin: 0 auto;
+  max-width: 50vw;
+}
+
+.work-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.work-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.company-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.role {
+  font-style: italic;
+}
+
+.work-date {
+  margin-left: auto;
+}
+
+.company-role-container {
+  display: flex;
+  flex-direction: column;
+}
+
+#about-myself h2,
+#work-experience h2 {
+  text-decoration: underline;
+}
+.skills-tags {
+  display: flex; /* Use flexbox for the container */
+  flex-wrap: wrap; /* Allow tags to wrap */
+  gap: 10px; /* Adjust the space between tags */
+  margin-top: 20px; /* Space above the tags */
+}
+
+.tag {
+  display: inline-flex; /* Display tags inline */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center content horizontally */
+  background-color: #dbdbdb; /* Slightly grey background */
+  padding: 5px 15px; /* Vertical and horizontal padding */
+  border-radius: 20px; /* Pill shape */
+  font-size: 14px; /* Adjust tag text size */
+}
