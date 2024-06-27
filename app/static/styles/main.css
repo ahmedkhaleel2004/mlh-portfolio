@@ -144,6 +144,7 @@ body {
   flex-direction: column;
 }
 
+#travel h2,
 #education h2,
 #hobbies h2,
 #about-myself h2,
@@ -260,4 +261,12 @@ body {
   margin-bottom: 20px;
   align-items: center;
   margin: 0;
+}
+
+#map {
+  height: 60vh;
+  width: 50vw;
+  margin: 0 auto;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
 }
