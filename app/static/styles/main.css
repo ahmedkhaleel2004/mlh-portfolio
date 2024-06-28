@@ -176,9 +176,10 @@ body {
 .container {
   display: grid;
   gap: 2rem;
-  padding: 2rem 10vw;
+  padding: 2rem 10vw; /* Adjust the padding as needed */
+  max-width: 1200px; /* Example max-width, adjust as needed */
+  margin: 0 auto; /* Center the container */
 }
-
 .text-center {
   text-align: center;
 }

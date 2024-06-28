@@ -1,0 +1,29 @@
+{% extends "index.html" %} {% block title %}Work Experiences{% endblock %} {%
+block main %}
+<section id="work-experience">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="heading">Work Experiences</h2>
+    </div>
+    {% for experience in work_experiences %}
+    <div class="work-item">
+      <div class="work-details">
+        <div class="company-role-container">
+          <p class="company-name">{{ experience.company }}</p>
+          <p class="role">{{ experience.position }}</p>
+        </div>
+        <p class="work-date">{{ experience.duration }}</p>
+      </div>
+      <div class="work-description">
+        <p>{{ experience.description }}</p>
+      </div>
+      <div class="skills-tags">
+        {% for tag in experience.tags %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

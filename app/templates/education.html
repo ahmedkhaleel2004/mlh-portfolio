@@ -1,0 +1,36 @@
+{% extends "index.html" %} {% block title %}Education{% endblock %} {% block
+main %}
+<section id="education">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="heading">Education</h2>
+    </div>
+    {% for edu in education %}
+    <div class="work-item">
+      <div class="work-details">
+        <div class="company-role-container">
+          <div class="another-company-container">
+            <img
+              src="{{ edu.img }}"
+              alt="{{ edu.school }} Logo"
+              class="education-logo"
+            />
+            <p class="company-name">{{ edu.school }}</p>
+          </div>
+          <p class="role">{{ edu.degree }}</p>
+        </div>
+        <p class="work-date">{{ edu.duration }}</p>
+      </div>
+      <div class="work-description">
+        <p>{{ edu.description }}</p>
+      </div>
+      <div class="skills-tags">
+        {% for tag in edu.tags %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
