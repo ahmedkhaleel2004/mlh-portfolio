@@ -271,3 +271,39 @@ body {
   margin-top: 3rem;
   margin-bottom: 5rem;
 }
+
+.nav-menu {
+  background-color: #1c539f; /* Adjust the background color as needed */
+  padding: 10px 0;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  display: inline-block;
+  margin-right: 20px; /* Adjust the space between items */
+}
+
+.nav-item:last-child {
+  margin-right: 0;
+}
+
+.nav-link {
+  color: white; /* Adjust the text color as needed */
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px 15px; /* Adjust the padding as needed */
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  background-color: #163d7a; /* Adjust the hover background color */
+  border-radius: 5px; /* Optional: adds rounded corners on hover */
+}
