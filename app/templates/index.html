@@ -44,6 +44,25 @@
         </a>
       </div>
     </header>
+    <nav class="nav-menu">
+      <ul class="nav-list">
+        <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+        <li class="nav-item">
+          <a href="{{url_for('work_experiences')}}" class="nav-link"
+            >Work Experience</a
+          >
+        </li>
+        <li class="nav-item">
+          <a href="{{url_for('education')}}" class="nav-link">Education</a>
+        </li>
+        <li class="nav-item">
+          <a href="{{url_for('hobbies')}}" class="nav-link">Hobbies</a>
+        </li>
+        <li class="nav-item">
+          <a href="{{url_for('map')}}" class="nav-link">Travel</a>
+        </li>
+      </ul>
+    </nav>
     {% if current_page == 'home' %}
     <div class="profile">
       <div id="profile-picture" class="profile-picture">
@@ -65,8 +84,9 @@
           application.
         </p>
         <p>
-          This is my portfolio site where I showcase my projects and skills.
-          Feel free to explore and learn more about me!
+          This is my portfolio site where I showcase my projects, experience,
+          education, and much more! Feel free to explore and learn more about
+          me!
         </p>
       </div>
     </section>
