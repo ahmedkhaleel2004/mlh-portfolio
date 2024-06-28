@@ -1,0 +1,111 @@
+{% extends "index.html" %} {% block title %}Work Experiences{% endblock %} {%
+block main %}
+<section id="travel">
+  <div class="text-center">
+    <h2 class="heading">My Travel</h2>
+    <p>Discover where my adventures have taken me across Earth.</p>
+  </div>
+  <div id="map"></div>
+  <script>
+    const map = L.map("map").setView([40, 0], 2);
+
+    const tiles = L.tileLayer(
+      "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+      {
+        maxZoom: 19,
+        attribution:
+          '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      }
+    ).addTo(map);
+    const locations = [
+      {
+        lat: 43,
+        lng: -80,
+        country: "Canada",
+        description: "This is where I currently live.",
+      },
+      // Add more locations here
+      {
+        lat: 48.8566,
+        lng: 2.3522,
+        country: "France",
+        description: "Visited the Eiffel Tower here!",
+      },
+      {
+        lat: 24.4539,
+        lng: 54.3773,
+        country: "UAE",
+        description:
+          "Born here and lived in Dubai for the first 6 years of my life.",
+      },
+      {
+        lat: 34.0522,
+        lng: -118.2437,
+        country: "USA",
+        description: "Visited Chicago, NYC, LA, etc.",
+      },
+      {
+        lat: 41.9028,
+        lng: 12.4964,
+        country: "Italy",
+        description: "Been to Rome and Amalfi Coast.",
+      },
+      {
+        lat: 33.2232,
+        lng: 43.6793,
+        country: "Iraq",
+        description: "Where I'm from and where my family lives.",
+      },
+      {
+        lat: 40.4168,
+        lng: -3.7038,
+        country: "Spain",
+        description: "Visited Madrid and Barcelona.",
+      },
+      {
+        lat: 53.3498,
+        lng: -6.2603,
+        country: "Ireland",
+        description: "Vacation in Ireland.",
+      },
+      {
+        lat: 31.9539,
+        lng: 35.9106,
+        country: "Jordan",
+        description: "Vacation in Jordan.",
+      },
+      {
+        lat: 33.8547,
+        lng: 35.8623,
+        country: "Lebanon",
+        description: "Vacation in Lebanon.",
+      },
+      {
+        lat: 21.3891,
+        lng: 39.8579,
+        country: "Saudi Arabia",
+        description: "Visited Mecca.",
+      },
+      {
+        lat: 21.4735,
+        lng: 55.9754,
+        country: "Oman",
+        description: "Vacation in Oman.",
+      },
+      {
+        lat: 41.0082,
+        lng: 28.9784,
+        country: "Turkey",
+        description: "Vacation in Turkey.",
+      },
+      // Example format: { lat: latitude, lng: longitude, country: "Country Name", description: "Short description." }
+    ];
+
+    locations.forEach((location) => {
+      const marker = L.marker([location.lat, location.lng])
+        .addTo(map)
+        .bindPopup(`<b>${location.country}</b><br />${location.description}`);
+    });
+  </script>
+</section>
+{% endblock %}
