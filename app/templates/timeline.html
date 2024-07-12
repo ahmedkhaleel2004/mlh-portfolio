@@ -152,13 +152,13 @@
     const postContainer = document.createElement("div");
     postContainer.classList.add("timeline-post");
     postContainer.innerHTML = `
-    <div class="name-email-container">
-        <h3>${post.name}</h3>
-        <p class="post-email">${post.email}</p>
-    </div>
-    <p>${post.content}</p>
-  `;
-    document.getElementById("timeline-posts").prepend(postContainer);
+      <div class="name-email-container">
+          <h3>${post.name}</h3>
+          <p class="post-email">${post.email}</p>
+      </div>
+      <p>${post.content}</p>
+      `;
+    return postContainer; // Return the container for appending/appending outside this function
   }
 
   async function loadTimelinePosts() {
@@ -167,7 +167,15 @@
       const data = await response.json();
       const posts = data.timeline_posts;
 
-      posts.forEach(addPostToTimeline);
+      posts.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)); // sort by newest first
+
+      console.log("Timeline posts sorted:", posts);
+
+      posts.forEach((post) =>
+        document
+          .getElementById("timeline-posts")
+          .append(addPostToTimeline(post))
+      );
     } catch (error) {
       console.error("Error loading timeline posts:", error);
     }
