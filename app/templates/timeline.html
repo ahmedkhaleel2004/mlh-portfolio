@@ -138,7 +138,9 @@
 
         if (response.ok) {
           const newPost = await response.json();
-          addPostToTimeline(newPost);
+          document
+            .getElementById("timeline-posts")
+            .prepend(addPostToTimeline(newPost));
           event.target.reset();
         } else {
           console.error("Error posting timeline:", response.statusText);
