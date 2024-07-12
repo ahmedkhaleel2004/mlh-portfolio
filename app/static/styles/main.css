@@ -144,6 +144,7 @@ body {
   flex-direction: column;
 }
 
+#timeline h2,
 #travel h2,
 #education h2,
 #hobbies h2,

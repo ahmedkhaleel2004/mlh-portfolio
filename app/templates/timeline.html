@@ -1,0 +1,178 @@
+{% extends "index.html" %} {% block title %}Timeline{% endblock %} {% block main
+%}
+<style>
+  body {
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  h2.heading {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  form div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  form input,
+  form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+  }
+
+  form textarea {
+    resize: none;
+  }
+
+  form button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+
+  form button:hover {
+    background-color: #0056b3;
+  }
+
+  .timeline-post {
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  .timeline-post h3 {
+    margin: 0;
+    font-size: 1.2em;
+  }
+
+  .timeline-post p {
+    margin: 10px 0;
+  }
+
+  .post-email {
+    font-size: 0.9em;
+    font-style: italic;
+    color: #555;
+  }
+
+  .name-email-container h3,
+  .name-email-container .post-email {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+</style>
+
+<section id="timeline">
+  <div class="container">
+    <div class="text-center">
+      <h2 class="heading">My Timeline</h2>
+      <p>Stay up to date in my career by reading some of my timeline posts!</p>
+    </div>
+
+    <!-- Form to create a new timeline post -->
+    <form id="timeline-form">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div>
+        <label for="content">Content:</label>
+        <textarea id="content" name="content" required></textarea>
+      </div>
+      <button type="submit">Post</button>
+    </form>
+
+    <!-- Section to display timeline posts -->
+    <div id="timeline-posts"></div>
+  </div>
+</section>
+
+<script>
+  document
+    .getElementById("timeline-form")
+    .addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      const formData = new FormData(event.target);
+
+      try {
+        const response = await fetch("/api/timeline_post", {
+          method: "POST",
+          body: formData,
+        });
+
+        if (response.ok) {
+          const newPost = await response.json();
+          addPostToTimeline(newPost);
+          event.target.reset();
+        } else {
+          console.error("Error posting timeline:", response.statusText);
+        }
+      } catch (error) {
+        console.error("Error posting timeline:", error);
+      }
+    });
+
+  function addPostToTimeline(post) {
+    const postContainer = document.createElement("div");
+    postContainer.classList.add("timeline-post");
+    postContainer.innerHTML = `
+    <div class="name-email-container">
+        <h3>${post.name}</h3>
+        <p class="post-email">${post.email}</p>
+    </div>
+    <p>${post.content}</p>
+  `;
+    document.getElementById("timeline-posts").prepend(postContainer);
+  }
+
+  async function loadTimelinePosts() {
+    try {
+      const response = await fetch("/api/timeline_post");
+      const data = await response.json();
+      const posts = data.timeline_posts;
+
+      posts.forEach(addPostToTimeline);
+    } catch (error) {
+      console.error("Error loading timeline posts:", error);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", loadTimelinePosts);
+</script>
+{% endblock %}
