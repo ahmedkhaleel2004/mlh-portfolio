@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Kill all existing tmux sessions
-tmux kill-server
-
 # Change directory to the project folder
 cd /root/mlh-portfolio/
 pwd
@@ -14,5 +11,5 @@ git fetch && git reset origin/main --hard
 source python3-virtualenv/bin/activate
 pip install -r requirements.txt
 
-# Start a new detached Tmux session that starts the Flask server
-tmux new-session -d -s portfolio 'flask run --host=0.0.0.0'
+# Restart myportfolio system service
+systemctl restart myportfolio
