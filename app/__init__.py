@@ -72,7 +72,7 @@ def hobbies():
     hobbies = [
         {
             "activity": "Keyboards / Typing",
-            "desc": "It shouldn't be too surprising that a Software Engineer is good at typing, but for me it has become a hobby. I've build custom mechanical keyboards at this point and am super interested in the certain switches and keys that are involved. Personally, I'm super into performance and I have achieved a typing speed of 171+ wpm.",
+            "desc": "It shouldn't be too surprising that a Software Engineer is good at typing, but for me it has become a hobby. I've build custom mechanical keyboards at this point and am super interested in the certain switches and keys that are involved. Personally, I'm super into performance and I have achieved a typing speed of 185+ wpm.",
             "img": "./static/img/keyboard.jpg"
         },
         {
