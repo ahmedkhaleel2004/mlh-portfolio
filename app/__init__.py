@@ -82,7 +82,7 @@ def hobbies():
         },
         {
             "activity": "Gym / Walking",
-            "desc": "I've been going to the gym for a while now and I've seen significant improvements in my physical and mental health. I also enjoy going for walks and hikes in nature. It's a great way to relax and take a break from the digital world. I've recently discovered many beautiful trails in Hamilton and I'm excited to explore more.",
+            "desc": "I've been going to the gym for a while now and I've seen significant improvements in my physical and mental health. I also enjoy going for walks and hikes in nature. It's a great way to relax and take a break from the digital world. I've recently discovered many beautiful trails in Hamilton and I'm excited to explore more. One day, I wish to climb impressive peaks!",
             "img": "./static/img/nature.jpg"
         }
     ]
