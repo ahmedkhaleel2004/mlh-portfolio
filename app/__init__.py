@@ -61,7 +61,7 @@ def education():
 @app.route('/work_experiences')
 def work_experiences():
     work_experiences = [
-        {'company': 'McMaster Artificial Intelligence Society', 'position': 'Workshop Developer', 'duration': 'Jan 2024 - Present',
+        {'company': 'McMaster Artificial Intelligence Society', 'position': 'Workshop Developer', 'duration': 'Jan 2024 - April 2024',
             'description': "Developed technical workshops on core Machine Learning concepts using Python for 100+ students. Wrote a reusable template with TensorFlow teaching students how to build Convolutional Neural Networks (CNN's). Instructed students on data handling tasks like cleaning, preprocessing, and feature selection using Pandas, along with model architecture. Conducted live coding demonstrations on Google Colab enabling attendees to follow along in real time.", 'tags': ["Neural Networks", "Teaching", "Scikit-Learn", "Convolutional Neural Networks (CNN's)", "Python", "Machine Learning", "TensorFlow", "Artificial Intelligence", "Deep Learning", "Leadership"]}
     ]
     return render_template('work_experiences.html', name=name, title="Work Experiences", work_experiences=work_experiences)
